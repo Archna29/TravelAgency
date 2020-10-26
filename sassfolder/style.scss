@@ -1,0 +1,293 @@
+
+//$danger:#7045af;
+$light:#124;
+$brand:#e1ad01;
+$g:#01796f;
+$lyell:#eee0b1;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');;
+
+body{
+    overflow-x: hidden;
+    font-family: monosarrate;
+}
+//mixin for margin and paddings
+@mixin spaces($m, $p) {
+   margin: $m;
+    padding: $p;
+  }
+  //mixin for headings
+  @mixin heading(){
+    h3{
+        color:$brand;
+        @include spaces(20px,10px);
+        margin-bottom:5px;
+        padding-bottom: 0;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+    }
+  }//mixin for para
+
+  @mixin para(){
+      p{
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      color:white;
+  }
+}
+// mixin for a:hover
+@mixin hover($col){
+a:hover{
+    color:$col;}
+}
+//border-bottom:1px solid #fff}}
+//for navigation bar 
+
+   #navbarNav{
+       justify-content:space-around;
+       li{
+        @include spaces(0,5px);
+           margin-left:10px;
+       }
+        a{
+    color:$brand;
+}
+    @include hover(white);
+        a.active{
+            color:white;
+        }
+   
+    }
+    //use of flex for image and its heading
+.logo{
+display:flex;
+    h2{
+        margin:10px;
+        color:$brand;
+        font-family:'Roboto', sans-serif; 
+    }
+}
+//image slider
+.carousel-item{
+    overflow:hidden;
+    img{
+    height:400px;
+   transition: transform 0.2s ease-in-out ;
+}
+.carousel-caption{
+    h4{
+        color:$lyell;
+    }
+}
+}
+//zoom in feature
+.carousel:hover{
+img{
+    transform: scale(1.4);
+}
+}
+// about us
+.more{
+    background-color:$lyell;
+    box-shadow: 4px 5px 10px 5px $g;
+    display:none;
+    @include spaces(auto,0px);
+    width:70%;
+    p{
+        width:80%;
+        text-indent: 30px;
+        @include spaces(15px,10px);
+box-sizing:border-box;
+    }
+    h5{
+       @include spaces(10px,10px);
+    }
+    #less{
+        @include spaces(20px,10px);
+    }
+    }
+.embed-responsive{
+  width:300px;
+  @include spaces(5px,5px);
+  float:right;
+}
+.destination{
+   @include heading();
+   @include para();
+}
+//Making the destination in flex
+.ca{
+    display:flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+   flex-wrap: nowrap;  
+.card{
+    @include spaces(20px,0px);    
+    width:320px;
+    height:320px;
+    overflow:hidden;
+   img{
+     overflow:hidden;
+    transition:transform all 1s linear; 
+    
+   }
+    .card-body{
+        p{width:90%;
+            line-height: 1.8em;
+    margin-left:10px;
+    @include spaces(10px,10px);
+        }
+        h5,h6{
+            text-align: center;
+        }
+        .btn{
+          @include spaces(15px,5px);
+          border-radius: 0;
+        }
+    }}
+    .card:hover { 
+        img{
+        transform: scale(1.2);
+    }
+    height:100%;
+}
+}
+.ca::-webkit-scrollbar{
+    display:none;
+}
+   
+//end of  destination 
+
+// start for grid
+@include heading();
+.gridcont{
+    @include spaces(10px,0px);
+}
+.row {
+    #c{
+        box-shadow:4px 5px 15px 6px $info;
+        border-radius: 10px;
+}
+}
+//end of grid
+
+// start Image GALARY
+.container{
+
+    @include heading();
+@include para();
+img{
+    @include spaces(10px,0px);
+    transition:0.5 ease;
+}
+img:hover{
+    box-shadow:4px 5px 5px 4px #888888;
+    border-radius: 10px;
+}
+.btn-info{
+    transition:0.5 ease -in-out;
+    letter-spacing: 2px;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+}
+//start of form
+.head{
+    @include heading();
+    @include para();
+    margin-top:40px;
+}
+.contact{
+    hr{
+        background: white;
+    }
+    @include heading();
+    background:rgba(0,0,0,.6);
+    color:white;
+    @include spaces(60px,20px);
+    box-shadow:0px 0px 10px 3px grey;
+    .form-group{
+        @include spaces(10px,0px);
+    }
+}
+
+//FOOTER
+footer{
+    background:#124;
+  
+.container{
+ 
+    @include heading(); 
+    @include para();
+    @include hover($brand); 
+  
+    ul{
+   
+        list-style-type: none;  
+       
+        .fa {
+            @include spaces(10px,5px);
+            font-size: 30px;
+            width: 60px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50%;
+          }
+          .fa-twitter {
+            background: #55ACEE;
+            color: white;
+          } 
+          .fa-instagram {
+            background:  #3f729b;
+            color: white;
+          } 
+          .fa-facebook-f {
+            background: #3B5998;
+            color: white;
+          }
+          .fa-linkedin{
+            background: #0e76a8;
+            color: white;
+          } 
+    }
+    a{
+        color:white;
+    }
+    hr{
+        background:white;  
+    }
+}
+}
+
+//responsive 
+
+@media screen and (max-width:570px){
+    .embed-responsive{
+        @include spaces(0,0);
+    }
+    .more{
+        width:100%;
+        }
+        .ca .card{
+            @include spaces(0px,0px);
+        }
+            .row {
+               #c{
+    width:160%;
+    @include spaces(10px,0px);
+    margin-left: 20px;
+        }
+    }
+    .contact{
+        @include spaces(10px,0px);
+
+    }
+    .gridcont{    
+            @include spaces(0,0);
+    }
+   
+   
+}
