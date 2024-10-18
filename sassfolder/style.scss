@@ -125,7 +125,7 @@ box-sizing:border-box;
 .card{
     @include spaces(20px,0px);    
     width:320px;
-    height:340px;
+    height:340px !important;
     overflow:hidden;
    img{
      overflow:hidden;
